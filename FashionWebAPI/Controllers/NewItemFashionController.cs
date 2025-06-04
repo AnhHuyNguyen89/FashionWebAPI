@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FashionWebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class NewItemFashionController : ControllerBase
     {
@@ -47,7 +47,7 @@ namespace FashionWebAPI.Controllers
 
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet]
         public JsonResult GetAll()
         {
             var result = _context.NewItem.ToList();
@@ -71,7 +71,7 @@ namespace FashionWebAPI.Controllers
             return new JsonResult(NoContent());
         }
 
-        [HttpPost("Update")]
+        [HttpPost]
 
         public JsonResult Update(NewFashionItems newItem)
         {
